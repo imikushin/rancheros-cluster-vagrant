@@ -1,6 +1,6 @@
-# RancherOS Vagrant
+# RancherOS Cluster on Vagrant
 
-Quickly checkout a multi-VM cluster based on RancherOS using Vagrant/Virtualbox.
+Quickly deploy a multi-VM RancherOS cluster on Vagrant/VirtualBox.
 
 
 ## Getting started
