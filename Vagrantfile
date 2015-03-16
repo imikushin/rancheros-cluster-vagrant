@@ -48,6 +48,9 @@ Vagrant.configure(2) do |config|
       ## Configure network not supported yet. using `auto_config: false`
       node.vm.network :private_network, type: :dhcp, auto_config: false
 
+      node.vm.provision "file", source: "src/node-ip.sh", destination: "/home/rancher/node-ip.sh"
+      node.vm.provision "shell", inline: "echo NODE_IP=`/home/rancher/node-ip.sh`", run: "always"
+
       ## Shared folders not supported yet
       node.vm.synced_folder ".", "/vagrant", disabled: true
 
