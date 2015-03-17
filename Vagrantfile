@@ -5,7 +5,7 @@
 CONFIG = File.join(File.dirname(__FILE__), "config.rb")
 
 # Defaults for config options defined in config.rb
-$num_minions = 1
+$num_nodes = 1
 $enable_serial_logging = (ENV['SERIAL_LOGGING'].to_s.downcase == 'true')
 $vm_gui = (ENV['GUI'].to_s.downcase == 'true')
 $vm_memory = ENV['NODE_MEM'] || 1024
@@ -32,7 +32,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.synced_folder ".", "/vagrant", disabled: true
 
-  (1..($num_minions + 1)).each do |i|
+  (1..$num_nodes).each do |i|
     hostname = "node-%02d" % i
 
     config.vm.define vmName = hostname do |node|

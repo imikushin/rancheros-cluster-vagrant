@@ -1,1 +1,1 @@
-$num_minions = 1
+$num_nodes = 3
